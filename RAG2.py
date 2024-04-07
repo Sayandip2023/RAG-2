@@ -1,4 +1,22 @@
 import streamlit as st
+import subprocess
+
+# Function to download spaCy model
+def download_spacy_model():
+    # Run the command to download spaCy model
+    result = subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"], capture_output=True, text=True)
+    return result.stdout
+
+# Streamlit app
+st.title("Download spaCy Model")
+
+# Download the model when the app starts
+st.write("Downloading spaCy model...")
+download_output = download_spacy_model()
+st.write("SpaCy model downloaded successfully!")
+st.write(download_output)  # Show the output of the download command
+
+import streamlit as st
 import fitz  # PyMuPDF
 import spacy
 import functools
