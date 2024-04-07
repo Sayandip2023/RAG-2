@@ -1,3 +1,4 @@
 streamlit==1.33.0
 pymupdf==1.18.17
+spacy==3.2.1
 transformers==4.21.0
